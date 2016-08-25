@@ -1,0 +1,250 @@
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+			<link rel="stylesheet" href="style.css" />
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="angularScript.js"></script>
+
+		</head>	
+
+		<body ng-app="main" ng-controller="mainController">
+			<div>
+				<nav class="navbar navbar-default default-navbar" style="margin-bottom: 0px">
+				  	<div class="container-fluid" style="width: 90%">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					      <a class="navbar-brand" href="#">
+					      	<img src="Images/Logo.jpg" style="height: 40px; width: 40px; margin-top: -10px" />
+					      </a>
+					    </div>
+
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					    	
+					      <ul class="nav navbar-nav">
+					        <li><a href="#"><font color="white">HOME</font></a></li>
+					        <li><a href="#"><font color="white">CONTESTS</font></a></li>
+					        <li><a href="#"><font color="white">LEADERBOARD</font></a></li>
+					        <li><a href="#"><font color="white">PROBLEMS</font></a></li>
+					        <li><a href="#"><font color="white">ABOUT</font></a></li>			        
+					      </ul>
+
+					      
+					      <ul class="nav navbar-nav navbar-right">
+					      	<form class="navbar-form navbar-left">
+						    	<div class="form-group">
+						          <input type="text" class="form-control" placeholder="Search Contests/Problems etc.">
+						        </div>
+						        <button type="submit" class="btn btn-default">Submit</button>
+						    </form>
+					        <li class="dropdown">
+					          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font color="white"> PROFILE </font><span class="caret" style="color: white"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="#">Action</a></li>
+					            <li><a href="#">Another action</a></li>
+					            <li><a href="#">Something else here</a></li>
+					            <li role="separator" class="divider"></li>
+					            <li><a href="#">Log Out</a></li>
+					          </ul>
+					        </li>
+					      </ul>
+					    </div><!-- /.navbar-collapse -->
+					  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+
+			<div class="separator" style="height: 10px"></div>
+
+			<div>
+				<ol class="breadcrumb">
+					<li><big>Contests</big></li>
+					<li><big>Code Carnage 2.0</big></li>
+					<li><big>Question 1</big></li>
+				</ol>
+			</div>
+
+			<div class="separator" style="height: 10px"></div>
+
+			<div>
+				<div class="col-md-3" id="question_options">
+					<div>
+						<ul class="nav" id="question_list">
+							<li><a href="#" ng-click="question_page = 1">Problem</a></li>
+							<li><a href="#" ng-click="question_page = 2">Leaderboard</a></li>
+							<li><a href="#" ng-click="question_page = 3">My Submissions</a></li>
+							<li><a href="#" ng-click="question_page = 4">Discussions</a></li>
+						</ul>
+					</div>
+
+					<div class="separator" style="height: 30px; border: none"></div>
+
+					<div>
+						<table style="margin: 10px">
+							<tr>
+								<td>Select Language:</td>
+								<td class="separator" style="width: 10px" />
+								<td>
+									<select>
+										<option ng-repeat="lang in langs">{{lang.name}}</option>
+									</select>
+								</td>
+							</tr>
+							<tr class="separator" style="height: 10px" />
+							<tr>
+								<td>Choose File:</td>
+								<td class="separator" style="width: 10px" />
+								<td>
+									<button class="btn btn-primary" style="border-radius: 15px">Choose File</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="col-md-8" id="question_content">
+
+					<div ng-show="question_page === 1">
+						<div style="border-bottom: 0.5px solid">
+							<h3 style="margin-left: 20px">Question 1</h3>
+						</div>
+
+						<div id="question_body">
+							<div>
+								<h4>Problem Statement:</h4>
+							</div>
+
+							<div>
+								<h4>Input Format: </h4>
+							</div>
+
+							<div>
+								<h4>Constraints: </h4>
+							</div>
+
+							<div>
+								<h4>Output Format: </h4>
+							</div>
+
+							<div>
+								<h4>Sample Input: </h4>
+							</div>
+
+							<div>
+								<h4>Sample Output: </h4>
+							</div>
+
+							<div>
+								<h4>Explaination: </h4>
+							</div>
+
+						</div>
+					</div>
+
+					<div ng-show="question_page === 3">
+
+						<div class="separator" style="height: 20px"></div>
+
+						<table class="table table-default">
+							<thead class="table-header" style="background-color: #A6ACAF">
+								<tr>
+									<th>#</th>
+									<th>When</th>
+									<th>Problem</th>
+									<th>Language</th>
+									<th>Verdict</th>
+									<th>Time</th>
+									<th>Memory</th>	
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div ng-show="question_page === 2">
+
+						<div class="separator" style="height: 20px"></div>
+
+						<table class="table table-default">
+							<thead class="table-header" style="background-color: #A6ACAF">
+								<tr>
+									<th>#</th>
+									<th>Who</th>
+									<th>Score</th>
+									<th>Question 1</th>
+									<th>Question 2</th>
+									<th>Question 3</th>
+									<th>Question 4</th>	
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Elliot Alderson</td>
+									<td>400</td>
+									<td>100</td>
+									<td>100</td>
+									<td>100</td>
+									<td>100</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div class="separator" style="height: 60px"></div>
+
+			<div id="footer">
+				<div class="separator" style="height: 30px"></div>
+				<div>
+					<div class="col-md-1"></div>
+					<div class="col-md-3">
+						<ul id="footerList">
+							<li><b>ABOUT US</b></li>
+							<li>Team</li>
+							<li>FAQ</li>
+							<li>Join Us</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul id="footerList">
+							<li><b>PROBLEMS</b></li>
+							<li>Easy</li>
+							<li>Medium</li>
+							<li>Hard</li>
+							<li>Challenges</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul id="footerList">
+							<li><b>CONTACT US</b></li>
+							<li>Address: IIT Indore</li>
+							<li>E-mail Id: progclub@iiti.ac.in</li>
+							<li>Phone: +91 98765 43210</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>

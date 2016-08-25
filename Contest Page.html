@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="angularScript.js"></script>
+
+	</head>	
+
+	<body ng-app="main" ng-controller="mainController">
+
+		<div>
+			
+			<nav class="navbar navbar-default default-navbar" style="margin-bottom: 0px">
+			  	<div class="container-fluid" style="width: 90%">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">
+					      	<img src="Images/Logo.jpg" style="height: 40px; width: 40px; margin-top: -10px" />
+					      </a>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				    	
+				      <ul class="nav navbar-nav">
+				        <li><a href="#"><font color="white">HOME</font></a></li>
+				        <li><a href="#"><font color="white">CONTESTS</font></a></li>
+				        <li><a href="#"><font color="white">LEADERBOARD</font></a></li>
+				        <li><a href="#"><font color="white">PROBLEMS</font></a></li>
+				        <li><a href="#"><font color="white">ABOUT</font></a></li>			        
+				      </ul>
+
+				      
+				      <ul class="nav navbar-nav navbar-right">
+				      	<form class="navbar-form navbar-left">
+					    	<div class="form-group">
+					          <input type="text" class="form-control" placeholder="Search Contests/Problems etc.">
+					        </div>
+					        <button type="submit" class="btn btn-default">Submit</button>
+					    </form>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font color="white"> PROFILE </font><span class="caret" style="color: white"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">Log Out</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+
+		<div style="margin-top: 0px; padding-bottom: 0px">
+			<img src="Images/CodeCarnage.jpg" style="height: 300px; width: 100%">
+		</div>
+
+		<div style="height: 80px; border-bottom: 1px solid lightgray; background-color: #E5E7E9">
+			<div class="col-md-2" style="margin-left: -15px"></div>
+
+			<div class="col-md-10">
+				<h1><b>CODE CARNAGE 2.0</b></h1>
+			</div>
+		</div>
+
+		<div>
+			<div class="col-md-2" style="margin-top: 55px; margin-left: -15px">
+				<ul class="nav sidebar">
+				    <li><a href="#">DESCRIPTION</a></li>
+				    <li><a href="#">RULES</a></li>
+				    <li><a href="#">PROBLEMS</a></li>
+				    <li><a href="#">MY SUBMISSIONS</a></li>
+				    <li><a href="#">LEADERBOARD</a></li>
+				    <li><a href="#">FAQ</a></li>			        
+				</ul>
+			</div>
+
+			<div class="col-md-8">
+				<h3 style="border-bottom: 0.5px solid; margin-bottom: 20px">PROBLEMS</h3>
+				<table class="table table-default">
+					<thead class="table-header" style="background-color: #979A9A">
+						<tr style="border-bottom: 0px">
+							<th class="col-md-3">Name</th>
+							<th class="col-md-3">Points</th>
+							<th class="col-md-3">Successful Submissions</th>
+						</tr>
+					</thead>
+					<tbody class="table-body" style="border-top: 0px">
+						<tr ng-repeat="ques in questions">
+							<td class="col-md-3"><a href="Question Page.html">{{ques.name}}</a></td>
+							<td class="col-md-3">{{ques.points}}</td>
+							<td class="col-md-3">{{ques.subs}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="separator" style="height: 30px"></div>
+			<div>
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<ul id="footerList">
+						<li><b>ABOUT US</b></li>
+						<li>Team</li>
+						<li>FAQ</li>
+						<li>Join Us</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul id="footerList">
+						<li><b>PROBLEMS</b></li>
+						<li>Easy</li>
+						<li>Medium</li>
+						<li>Hard</li>
+						<li>Challenges</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul id="footerList">
+						<li><b>CONTACT US</b></li>
+						<li>Address: IIT Indore</li>
+						<li>E-mail Id: progclub@iiti.ac.in</li>
+						<li>Phone: +91 98765 43210</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
